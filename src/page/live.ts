@@ -39,11 +39,15 @@ export const editLivePage = async () => {
         traceOpenLive();
       }
     });
+
+    return;
   }
 
   // 영상 Layout이 발견이 되었다면 content를 수정할 준비가 되었음.
   const $playerLayout = await waitingElement(`#${PLAYER_LAYOUT_ID}`);
-  if (!$playerLayout) return;
+  if (!$playerLayout) {
+    return;
+  }
 
   // if (!document.getElementById("chzzk-plus-live-helper")) {
   // Feat: Helper 추가 (즐겨찾기, 녹화, 캡처) =========================================================
