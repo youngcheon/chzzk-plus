@@ -112,10 +112,12 @@ export async function chatSetting(): Promise<void> {
             const chatListContainer = await waitingElement(
               ".live_chatting_list_container__vwsbZ"
             );
-            chatListContainer.appendChild(wrapper);
-            const container = document.createElement("div");
-            wrapper.appendChild(container);
-            createReactElement(container, PinnedMessageBox);
+            if (chatListContainer) {
+              chatListContainer.appendChild(wrapper);
+              const container = document.createElement("div");
+              wrapper.appendChild(container);
+              createReactElement(container, PinnedMessageBox);
+            }
           }
         }
       }

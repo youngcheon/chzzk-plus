@@ -32,10 +32,12 @@ export const userPopupObserve = async () => {
   });
 
   const chatContainer = await waitingElement(CHAT_CONTAINER);
-  userPopupOb.observe(chatContainer, {
-    subtree: true,
-    childList: true,
-  });
+  if (chatContainer) {
+    userPopupOb.observe(chatContainer, {
+      subtree: true,
+      childList: true,
+    });
+  }
 };
 
 export const chatObserve = async () => {
@@ -84,8 +86,10 @@ export const chatObserve = async () => {
   });
 
   const chatContainer = await waitingElement(CHAT_CONTAINER);
-  chatOb.observe(chatContainer, {
-    subtree: true,
-    childList: true,
-  });
+  if (chatContainer) {
+    chatOb.observe(chatContainer, {
+      subtree: true,
+      childList: true,
+    });
+  }
 };
