@@ -5,7 +5,7 @@ import Global from "../components/Global";
 import { log } from "../utils/log";
 import { createReactElement } from "../utils/dom";
 
-export const editGlobalPage = async () => {
+export const editGlobalPage = () => {
   /**
    * 글로벌로 적용시킬만한 내용을 관리합니다.
    * 차후 페이지에 popup과 동일한 컴포넌트를 띄우는데 사용될 수 있어요.
@@ -18,7 +18,7 @@ export const editGlobalPage = async () => {
   }
 
   previewSetting();
-  await chatSetting();
+  chatSetting();
 
   log("GLOBAL PAGE 설정");
 };
